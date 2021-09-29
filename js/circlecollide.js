@@ -14,7 +14,16 @@ const CircleCollide = () => {
         return distance < main.radius + otherObject.radius;
     }
 
-    return { isCollide }
+    function getDistance(main, otherObject) 
+    {
+        const distanceX = main.x - otherObject.x; 
+        const distanceY = main.y - otherObject.y;
+        const distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
+
+        return distance;
+    }
+
+    return { isCollide, getDistance }
 }
 
 export default CircleCollide;
